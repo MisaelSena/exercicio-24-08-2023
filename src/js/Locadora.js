@@ -16,4 +16,18 @@ export class Locadora extends Veiculo{
             }
         });
     }
+    devolverVeiculo(posicaoLista){
+        this.veiculos.forEach((element,index)=>{
+            if(index === posicaoLista){
+                element.disponivel = true;
+            }
+        });
+    }
+    excluirVeiculo(posicaoLista){
+        this.veiculos.forEach((element,index)=>{
+            if(index === posicaoLista){
+                this.veiculos.splice(index,1);
+            }
+        });
+    }
 }
