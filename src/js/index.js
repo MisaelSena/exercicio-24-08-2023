@@ -57,7 +57,7 @@ function cadastarVeiculo(event) {
 function renderizaDisponiveis() {
     tabelaVeiculosDisponiveis.innerHTML = '';
     locadora.veiculos.forEach((element, index)=>{
-        if (element.disponivel===true) {
+        if (element.disponivel) {
             tabelaVeiculosDisponiveis.innerHTML += `<tr>
                 <th id="${index}" scope="row">${index+1}</th>
                 <td>${element.placa}</td>
@@ -75,7 +75,7 @@ function renderizaDisponiveis() {
 function renderizaAlugados() {
     tabelaVeiculosAlugados.innerHTML = '';
     locadora.veiculos.forEach((element, index)=>{
-        if (element.disponivel===false) {
+        if (!element.disponivel) {
             tabelaVeiculosAlugados.innerHTML += `<tr>
                 <th id="${index}" scope="row">${index+1}</th>
                 <td>${element.placa}</td>
